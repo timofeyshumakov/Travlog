@@ -155,6 +155,24 @@ h4 {
     filter: blur(250px);
 }
 
+.main__eclipse {
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    background: #FACD49;
+    opacity: 0.5;
+    -webkit-filter: blur(250px);
+    filter: blur(250px);
+}
+
+.main__eclipse-container {
+    position: relative;
+    width: 500px;
+    height: 500px;
+    left: 1351px;
+    top: 847px;
+}
+
 .header__container {
     min-height: 120px;
 }
@@ -190,6 +208,9 @@ h4 {
     -webkit-box-direction: normal;
     -ms-flex-direction: row;
     flex-direction: row;
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
 }
 
 .header__autorization {
@@ -202,26 +223,25 @@ h4 {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: justify;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
     -webkit-box-flex: 1;
     -ms-flex-positive: 1;
     flex-grow: 1;
+    gap: 7%;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
 }
 
 .header__menu {
-    margin: 0 30px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: justify;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
     -webkit-box-flex: 1;
     -ms-flex-positive: 1;
     flex-grow: 1;
-    margin: 0 130px;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
 }
 
 .clients__ind-vector {
@@ -392,7 +412,7 @@ h4 {
 }
 
 .services__container {
-    padding: 0 40px 0 80px;
+    width: 90%;
 }
 
 .services__block {
