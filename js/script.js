@@ -1,13 +1,12 @@
-const el = document.getElementById("header__menu");
-window.onresize = function(event) {
-var getprop = window.getComputedStyle(el, null).getPropertyValue("margin-left");
-getprop = getprop.replace('px','');
-if (getprop<100){
-document.getElementById("menu__list").style.flexDirection = "column";
-document.getElementById("header__container").style.flexDirection = "column";
+function previous_destination_cards(){
+  alert("Вы нажали на кнопку");
 }
-else{
-document.getElementById("menu__list").style.flexDirection = "row";
-document.getElementById("header__container").style.flexDirection = "row";
+function next_destination_cards(){
+    alert("Вы нажали на кнопку");
 }
-};
+function previous_testimonials_cards(){
+    alert("Вы нажали на кнопку");
+}
+function next_testimonials_cards(){
+    alert("Вы нажали на кнопку");
+}

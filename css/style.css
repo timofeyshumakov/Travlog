@@ -64,7 +64,7 @@
 h1 {
     font: 700 14px CircularStd;
     color: rgb(25, 24, 37);
-    font-size: 60px;
+    font-size: 66px;
     line-height: 120%;
 }
 
@@ -78,7 +78,7 @@ h2 {
 
 h3 {
     font: 700 14px CircularStd;
-    font-size: 40px;
+    font-size: 44px;
     color: rgb(25, 24, 37);
 }
 
@@ -115,8 +115,8 @@ h4 {
     flex-direction: column;
 }
 
-.left-block__photo img {
-    width: 110%;
+.right-block__title {
+    width: 380px;
 }
 
 .main-block__container {
@@ -127,6 +127,12 @@ h4 {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 80px;
+}
+
+.destination__block-header {
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
 }
 
 .destination-card {
@@ -146,7 +152,7 @@ h4 {
 }
 
 .header__eclipse {
-    position: absolute;
+    position: relative;
     width: 500px;
     height: 500px;
     left: -356px;
@@ -201,7 +207,6 @@ h4 {
 .main__eclipse-container {
     position: relative;
     width: 500px;
-    height: 500px;
     left: 1351px;
     top: 847px;
 }
@@ -230,7 +235,7 @@ h4 {
     margin: 0px auto;
     -webkit-box-sizing: content-box;
     box-sizing: content-box;
-    max-width: 80%;
+    max-width: 1120px;
     -webkit-box-pack: justify;
     -ms-flex-pack: justify;
     justify-content: space-between;
@@ -319,6 +324,7 @@ h4 {
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
+    padding: 50px;
 }
 
 .arrow img {
@@ -545,16 +551,16 @@ h4 {
 }
 
 .left-block__bg img {
-    top: -40px;
-    left: -55px;
+    top: -80px;
+    left: -90px;
     position: absolute;
-    width: 140%;
 }
 
 .left-block__photos {
     display: grid;
     grid-template-areas: "a b" "c c";
     grid-gap: 10%;
+    margin: 0 50px 0 0;
 }
 
 .left-block__photos:nth-child(3) {
@@ -563,6 +569,28 @@ h4 {
 
 section {
     padding: 40px 0;
+}
+
+.testimonials__title-highlight {
+    color: #FF5722;
+    font-size: 34px;
+}
+
+.testimonials__container {
+    padding-left: 90px;
+}
+
+.testimonials__title {
+    font-size: 28px;
+}
+
+.testimonials__text {
+    font-size: 23px;
+    text-align: center;
+}
+
+.subscribe__titile-top {
+    font-size: 55px;
 }
 
 .subscribe__main-button {
@@ -598,6 +626,7 @@ section {
 
 .subscribe__block-header {
     text-align: center;
+    gap: 60px;
 }
 
 .subscribe_main_button {
@@ -647,6 +676,7 @@ section {
     -ms-flex-align: center;
     align-items: center;
     gap: 60px;
+    padding: 0 30px;
 }
 
 .testimonials__rating {
@@ -672,11 +702,7 @@ section {
 }
 
 .subscribe__block-header__titile-top {
-    font-size: 50px;
-}
-
-.subscribe__block-header {
-    gap: 60px;
+    font-size: 55px;
 }
 
 .subscribe__bg {
@@ -751,12 +777,21 @@ section {
     color: rgb(25, 24, 37);
 }
 
+.services__block-header {
+    max-width: 60%;
+}
+
 .testimonials__ind-vector {
-    position: relative;
-    top: -930px;
+    position: absolute;
     z-index: -100;
     opacity: 0.1;
     height: 0px;
+    width: 100%;
+    margin: -58% 0 0 0;
+}
+
+.testimonials__ind-vector img {
+    width: 100%;
 }
 
 .destination__ind-vector {
@@ -765,8 +800,7 @@ section {
 
 .subscribe__vector_1 img {
     position: relative;
-    top: 97px;
-    left: 285px;
+    margin: -100% 0 0 -265%;
 }
 
 .subscribe__vector_2 img {
@@ -826,7 +860,7 @@ section {
 }
 
 .page__main-block {
-    padding: 120px 0 0 0;
+    padding: 120px 0 40px 0;
 }
 
 .travel-point__info {
@@ -876,5 +910,24 @@ section {
 }
 
 .travel-point__images {
+    position: relative;
+}
+
+.left-block_el1 {
+    position: absolute;
+    margin: 19% 0 0 36%;
+}
+
+.left-block_el2 {
+    position: absolute;
+    margin: 40% 0 0 65%;
+}
+
+.left-block_el3 {
+    position: absolute;
+    margin: 30% 0 0 75%;
+}
+
+.left-block__ind-elements {
     position: relative;
 }
