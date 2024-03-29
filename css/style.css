@@ -236,7 +236,7 @@ h4 {
     margin: 0 auto;
     -webkit-box-sizing: content-box;
     box-sizing: content-box;
-    max-width: 70rem;
+    width: 75rem;
     -webkit-box-pack: justify;
     -ms-flex-pack: justify;
     justify-content: space-between;
@@ -247,9 +247,6 @@ h4 {
     -webkit-box-direction: normal;
     -ms-flex-direction: row;
     flex-direction: row;
-    -webkit-box-flex: 1;
-    -ms-flex-positive: 1;
-    flex-grow: 1;
 }
 
 .header__autorization {
@@ -454,7 +451,6 @@ h4 {
 .services__container {
     display: grid;
     grid-template-columns: 2fr 1fr;
-    width: 90%;
 }
 
 .services__card {
