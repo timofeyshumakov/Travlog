@@ -1,0 +1,285 @@
+include mixins.pug
+doctype html
+html(lang="en")
+  head
+    meta(charset='UTF-8')
+    meta(name='format-detection' content="telephone=yes")
+    meta(name="robots" content="index, follow")
+    meta(name="keywords" content="travel, explore, vacation, explore, adventure, tourism, itinerary, airlines, hotels, backpacking, culture, sightseeing, holiday, remote, wanderlust, passport, tropical, accommodation, transportation, landmarks")
+    meta(name="description" content="Explore the world with our travel website! Discover breathtaking explores, find the best deals on flights and hotels, and plan your dream vacation. From relaxing beach getaways to thrilling adventures, let us help you create unforgettable memories. Book your next trip today!")
+    meta(name='viewport' content='width=device-width, initial-scale=1.0')
+    link(rel='icon' type='image/x-icon' href='assets/img/common/logo.svg')
+    title Travlog
+    link(href="https://fonts.googleapis.com/css?family=Inter:400&display=swap" rel="stylesheet")
+    link(rel='stylesheet' href='assets/css/style.css')
+    link(rel='stylesheet' href='assets/css/reset.css')
+  body 
+    -var sectionNumber= 0;
+    -var sectionName= ['header','main-block','clients','services','explore','travel-point','features','testimonials','subscribe','footer']
+    -var articleTitleTop= ['Services','Top Destination','Travel Point','Key features','Testimonials','subscribe to our newsletter']
+    -var articleTitle= ['Our top value categories for you','Explore top destination','We helping you find your dream location','We offer best services','Trust our clients','Prepare yourself & let’s explore the beauty of the world']
+    -var articleText= ['Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC.','']
+    -var sectionName= ['header__','main-block__','clients__','services__','explore__','travel-point__','features__','testimonials__','subscribe__','footer__']
+    .wrapper
+      -var ancors = [];
+      -var menuLinks = ['Home', 'Discover', 'Special Deals', 'Contact'];
+      -menuLinks.forEach(function callback(val, index) {
+      -ancors[index] = val.replace(" ","");
+      -});
+      -menuLinks.forEach((link, index)=> ancors[0]);
+      -sectionName= 'header'
+      -bemBlock = `${sectionName}__`
+      header(class=`${sectionName}` id=ancors[0])
+        -newBlock = 'container'
+        div(class=`${bemBlock}` + newBlock + ` ${newBlock}`)
+          -newBlock = 'ellipse'
+          div(class=`${bemBlock}` + newBlock + ` ${newBlock}`)
+          -newBlock = 'logo'
+          a(class=`${bemBlock}` + newBlock + ` ${newBlock}` href='#')
+            +img(`${bemBlock}` + newBlock + '-img','common/logo','svg','logo')
+            div(class=`${bemBlock}` + newBlock + '-txt' + ' logo-txt') Travlog
+          -newBlock = 'menu'
+          nav(class=`${bemBlock}` + newBlock + ` ${newBlock}`)
+           ul(class=`${newBlock}` + '__list')
+              -i=0;
+              each index in menuLinks
+                li(class=`${newBlock}` + '__item')
+                  a(class=`${newBlock}` + '__link')(href=`#${ancors[i]}`)= index
+                  -i=i+1;
+          div(class=`${bemBlock}` + 'autorization' + ' buttons')
+            +actionButton(`${bemBlock}` + 'login' + ' secondary-button' + ' button','Log In','login')
+            +actionButton(`${bemBlock}` + 'signup' + ' primary-button' + ' button','Sign Up','signup')
+      main.main
+        -sectionNumber++
+        -sectionName= 'main-block'
+        -bemBlock = `${sectionName}__`
+        section(class='main__' + `${sectionName}`)(class=`${sectionName}`)
+          div(class=`${bemBlock}container`).container
+            -newBlock = 'left-block'
+            div(class=`${bemBlock}` + newBlock + ` ${newBlock}`)
+              div(class=`${newBlock}__` + 'decor-button-container' + ' decor-button-container')
+                div(class=`${newBlock}__` + 'decor-button' + ' decor-button')
+                  span(class=`${newBlock}` + '__txt' + 'decor-button-txt') Explore the world!
+                  +img(`${newBlock}` + '__img','main-block/title-decor','svg',' ')
+              h1(class=`${newBlock}` + '__title') Travel <span class="top-destination">top destination</span> of the world
+              div(class=`${newBlock}` + '__txt') We always make our customer happy by providing as many choices as possible
+              div(class=`${newBlock}` + '__buttons' + ` buttons`)
+                +actionButton(`${newBlock}` + '__button' + ' primary-button','Get Started')
+                button(class=`${newBlock}` + '__button' + ' secondary-button')
+                  +img(`${newBlock}` + '__img','main-block/watch','svg',' ')
+                  span(class=`${newBlock}` + '__button-txt') Watch Demo
+            -newBlock = 'right-block'
+            div(class=`${bemBlock}` + newBlock + ` ${newBlock}`)
+              div(class=`${newBlock}` + '__bg')
+                +img(`${newBlock}` + '__bg-img','main-block/bg','png',' ')
+              div(class=`${newBlock}` + '__imgs')
+                div(class=`${newBlock}` + '__imgs-column')
+                  each img in ['img1','img2']
+                    +img(`${newBlock}` + '__img',`main-block/${img}`,'png','travel place image')
+                div(class=`${newBlock}` + '__imgs-column')
+                  +img(`${newBlock}` + '__img','main-block/img3','png','travel place image')
+              div(class=`${newBlock}` + '__mini-decor')
+                each img in ['mini-decor1','mini-decor2']
+                  +img(`${newBlock}` + '__mini-decor-img', `main-block/${img}`, 'svg', ' ')
+              div(class=`${newBlock}` + '__decor-button-container' + ' decor-button-container')
+                div(class=`${newBlock}` + '__decor-button' + ' decor-button')
+                  +img(`${newBlock}` + '__decor-button-img', `main-block/location`, 'svg', ' ')
+                  div(class=`${newBlock}` + '__decor-button-txt' + ' decor-button-txt') Top Places
+          -newBlock= 'clients'
+          div(class=`${bemBlock}` + `${newBlock}`)(class=`${newBlock}`)
+            div(class=`${newBlock}` + '__container').container
+              +img(`${newBlock}` + '__decor','main-block/decor','svg',' ')
+              .clients__imgs
+                each img in ['tripadvisor','expedia','booking','airbnb','orbitz']
+                  +img(`${newBlock}` + '__img', `clients/${img}`, 'svg', img, 0, 'l')
+        -sectionNumber++
+        -sectionName= 'services'
+        -bemBlock = `${sectionName}__`
+        section(class='main__' + `${sectionName}`)(class=`${sectionName}`)
+          div(class=`${bemBlock}` + 'container').container
+            -newBlock = 'ellipse'
+            div(class=`${bemBlock}` + newBlock + ` ${newBlock}`)
+            +block-header(articleTitleTop[0],articleTitle[0],articleText[1],sectionName)
+            div(class=`${bemBlock}` + 'cards-container' + ' container' id='slider-container')
+              div(class=`${bemBlock}` + 'cards' id='slider')
+                -var tt= 'What looked like a small patch of purple grass, above five feet.'
+                each item in [ {image: 'service1', title : 'Best Tour Guide', text : tt}, {image: 'service2', title: 'Easy Booking', text: 'Square, was moving across the sand in their direction.'},{image: 'service3', title: 'Weather Forecast', text: tt}]
+                  -newBlock = 'services-card'
+                  div(class=`${bemBlock}` + newBlock + ` ${newBlock}` + ' fc' tabindex="0")
+                    +img(`${newBlock}` + '__img','services/'+`${item.image}`,'png',' ',' ','l')
+                    h4(class=`${newBlock}` + '__title')= item.title
+                    div(class=`${newBlock}` + '__text')= item.text
+        -sectionNumber++
+        -sectionName= 'explore'
+        -bemBlock = `${sectionName}__`
+        section(class='main__' + `${sectionName}` id=ancors[1])(class=`${sectionName}`)
+          div(class=`${bemBlock}` + 'container').container.fc
+            +img(`${bemBlock}` + 'decor' + ' decor',`${sectionName}` + '/decor','svg',' ',' ','l')
+            -newBlock = ' '
+            div(class=`${bemBlock}` + 'top')
+              +block-header(articleTitleTop[1],articleTitle[1],articleText[1],sectionName)
+              -newBlock = 'arrows'
+              div(class=`${bemBlock}` + newBlock + ` ${newBlock}`)
+                button(class=`${bemBlock}` + 'arrow' onclick="previousExploreCard();").arrow.arrow-no-bg
+                  +img(`${bemBlock}` + 'arrow-img','common/arrow-black','svg','previous card')
+                button(class=`${bemBlock}` + '__arrow arrow arrow arrow-bg' onclick="nextExploreCard();")
+                  +img(`${bemBlock}` + 'arrow-img','common/arrow-white','svg','next card',' ','l')
+            -newBlock = 'cards'
+            div(class=`${bemBlock}` + newBlock + ` ${newBlock}`)
+              -var cardTitle1= 'Ocean with full of Colors'
+                -var cardRatingStar= 'star-orange'
+                each item in [ {cardImg: 'place1', cardTitle : 'Paradise Beach, Bantayan Island', cardPrice : '$550.16', cardText : 'Rome, Italy', cardRatingText : '4.8', alt : 'Beach'}, {cardImg: 'place2', cardTitle : cardTitle1, cardPrice : '$20.99', cardText : 'Maldives', cardRatingText : '4.5', alt : 'Ocean'}, {cardImg: 'place3', cardTitle : 'Mountain View, Above the cloud', cardPrice : '$150.99', cardText : 'United Arab Emeries ', cardRatingText : '5.0', alt : 'Mountain'}, {cardImg: 'place3', cardTitle : 'Mountain View, Above the cloud', cardPrice : '$150.99', cardText : 'United Arab Emeries ', cardRatingText : '5.0', alt : 'Mountain'} ]
+                  -newBlock = 'explore-card'
+                  div(class=`${bemBlock}` + newBlock + ` ${newBlock}` tabindex="0")
+                    +img(`${newBlock}` + '__card-img',`explore/${item.cardImg}`,'png',item.alt,' ','l')
+                    div(class=`${newBlock}` + '__desc')
+                      div(class=`${newBlock}` + '__header')
+                        div(class=`${newBlock}` + '__title')= item.cardTitle
+                        div(class=`${newBlock}` + '__price')= item.cardPrice 
+                      div(class=`${newBlock}` + '__text' + ' fs')= item.cardText
+                      div(class=`${newBlock}` + '__rating' + ' fs')
+                        div(class=`${newBlock}` + '__num')= item.cardRatingText
+                        +img(`${newBlock}` + '__star',`explore/${cardRatingStar}`,'svg',' ',' ','l')
+        -sectionNumber++
+        -sectionName= 'travel-point'
+        -bemBlock = `${sectionName}__`
+        section(class='main__' + `${sectionName}`)(class=`${sectionName}`)
+          div(class=`${bemBlock}` + 'container').container
+            div(class=`${bemBlock}` + 'imgs')
+              each idx in ['bg','ellipse1','ellipse2','ellipse3','ellipse4','ellipse5']
+                +img(`${sectionName}__img`,`${sectionName}/${idx}`,'svg',' ',' ','l')
+              +img(`${sectionName}__main-img`,`${sectionName}/img`,'png',' ',' ','l')
+            div(class=`${bemBlock}` + 'info')
+              +block-header(articleTitleTop[2],articleTitle[2],articleText[0],sectionName)
+              div(class=`${bemBlock}` + 'cards')
+                each idx in [ {title: '500+', text : 'Holiday Package'}, {title: '100', text : 'Luxury Hotel'}, {title: '7', text : 'Premium Airlines'}, {title: '2k+', text : 'Happy Customer'}  ]
+                  div(class=`${bemBlock}` + 'card' tabindex="0")
+                    div(class=`${bemBlock}` + 'card-title')= idx.title
+                    div(class=`${bemBlock}` + 'card-text')= idx.text
+              -newBlock = 'decor-button'
+              div(class=`${bemBlock}` + newBlock + '-container' + ' ' + newBlock + '-container')
+                div(class=`${bemBlock}` + newBlock + ` ${newBlock}`)
+                  +img(`${newBlock}` + '__img',`${sectionName}/discount`,'svg',' ',' ','l')
+                  div(class=`${newBlock}` + '__txt' + ' decor-button-txt') Discounted Price
+              +img(`${sectionName}__decor` + ' decor',`${sectionName}/decor`,'svg',' ',' ','l')
+        -sectionNumber++
+        -sectionName= 'features'
+        -bemBlock = `${sectionName}__`
+        section(class='main__' + `${sectionName}` id=ancors[2])(class=`${sectionName}`)
+          -newBlock = 'container'
+          div(class=`${bemBlock}` + newBlock + ` ${newBlock}`)
+            div(class=`${bemBlock}` + 'desc')
+              +block-header(articleTitleTop[3],articleTitle[3],articleText[0],sectionName)
+              div(class=`${bemBlock}` + 'cards')
+                -var tt= 'We offer best services'
+                -var tt1= 'It has roots in a piece of classical'
+                each idx in [ {image: 'feature1', title : tt, text : 'Lorem Ipsum is not simply random text'}, {image: 'feature2', title: 'Schedule your trip', text: tt1},{image: 'feature3', title : 'Get discounted coupons', text : 'Lorem Ipsum is not simply random text'} ]
+                  div(class=`${bemBlock}` + 'card' tabindex="0")
+                    +img(`${bemBlock}card-img`,`${sectionName}/${idx.image}`,'svg',' ',' ','l')
+                    div(class=`${bemBlock}` + 'card-desc')
+                      h4(class=`${bemBlock}` + 'card-img-title')= idx.title
+                      div(class=`${bemBlock}` + 'card-txt')= idx.text
+            div(class=`${bemBlock}` + 'decor-block')
+              -imgs= ['img1','img2']
+              -formats= ['png','png']
+              - for (i = 0; i < imgs.length; ++i) {
+                +img(`${bemBlock}` + 'decor-block-img',`${sectionName}/${imgs[i]}`,`${formats[i]}`,' ',' ','l')
+              -}
+              +img(`${bemBlock}` + 'decor-block-bg',`${sectionName}/decor`,`svg`,' ',' ','l')
+              -newBlock = 'decor-button'
+              div(class=`${bemBlock}` + newBlock + ` ${newBlock}`)
+                +img(`${newBlock}__img`,`${sectionName}/map`,`svg`,' ',' ','l')
+                div(class=`${newBlock}` + '__txt' + ' decor-button-txt') Paradise on Earth
+        -sectionNumber++
+        -sectionName= 'testimonials'
+        -bemBlock = `${sectionName}__`
+        section(class=`main__${sectionName}`)(class=`${sectionName}`)
+          -newBlock = 'container'
+          div(class=`${bemBlock}` + newBlock + ` ${newBlock}`)
+            +img(`${sectionName}__bg` + ' decor',`${sectionName}/bg`,'svg',' ',' ','l')
+            button(class="testimonials__arrow" onclick="previousTestimonialsCard();").arrow.arrow-no-bg
+              +img(`${bemBlock}` + 'arrow-img','common/arrow-black','svg','previous card')
+            div(class=`${bemBlock}` + 'content')
+              +block-header(articleTitleTop[4],articleTitle[4],articleText[1],sectionName)
+              div(class=`${bemBlock}` + 'block')
+                div(class=`${bemBlock}` + 'main-content')
+                  +img(`${bemBlock}` + 'img',`${sectionName}` + '/client','png','client img',' ',' ','l')
+                  div(class=`${bemBlock}` + 'desc')
+                    div(class=`${bemBlock}` + 'title') <span class="testimonials__title-highlight">Mark Smith</span> / Travel Enthusiast
+                    div(class=`${bemBlock}` + 'rating')
+                      - for (var i = 0; i < 5; ++i) {
+                        +img(`${bemBlock}` + 'rating-star','testimonials/star-yellow','svg',' ',' ','l')
+                      - }
+                    div(class=`${bemBlock}` + 'text')= articleText[0]
+                div(class=`${bemBlock}` + 'main-content')
+                  +img(`${bemBlock}` + 'img',`${sectionName}` + '/client','png','client img',' ',' ','l')
+                  div(class=`${bemBlock}` + 'desc')
+                    div(class=`${bemBlock}` + 'title') <span class="testimonials__title-highlight">Mark Smith</span> / Travel Enthusiast
+                    div(class=`${bemBlock}` + 'rating')
+                      - for (var i = 0; i < 5; ++i) {
+                        +img(`${bemBlock}` + 'rating-star','testimonials/star-yellow','svg',' ',' ','l')
+                      - }
+                    div(class=`${bemBlock}` + 'text')= articleText[0]
+                div(class=`${bemBlock}` + 'main-content')
+                  +img(`${bemBlock}` + 'img',`${sectionName}` + '/client','png','client img',' ',' ','l')
+                  div(class=`${bemBlock}` + 'desc')
+                    div(class=`${bemBlock}` + 'title') <span class="testimonials__title-highlight">Mark Smith</span> / Travel Enthusiast
+                    div(class=`${bemBlock}` + 'rating')
+                      - for (var i = 0; i < 5; ++i) {
+                        +img(`${bemBlock}` + 'rating-star','testimonials/star-yellow','svg',' ',' ','l')
+                      - }
+                    div(class=`${bemBlock}` + 'text')= articleText[0]
+              div(class=`${bemBlock}` + 'scroll'  id="scroll")
+                each img in ['circle-white','circle-pink','circle-white']
+                  +img(`${bemBlock}` + 'scroll-pointer',`testimonials/${img}`,'svg','scroll-pointer','0','l')          
+            button(class=`${bemBlock}` + 'arrow' + ' arrow' + ' arrow-bg' onclick="nextTestimonialsCard();")
+              +img(`${bemBlock}` + 'arrow-img','common/arrow-white','svg','next card')
+            -newBlock = 'decor'
+            +img(`${bemBlock}` + newBlock + ` ${newBlock}`,`testimonials/decor`,'svg','scroll-pointer',' ','l')
+        -sectionNumber++
+        -sectionName= 'subscribe'
+        -bemBlock = `${sectionName}__`
+        section(class='main__' + `${sectionName}` id=ancors[3])(class=`${sectionName}`)
+          -newBlock = 'container'
+          div(class=`${bemBlock}` + newBlock + ` ${newBlock}`)
+            +block-header(articleTitleTop[5],articleTitle[5],articleText[1],sectionName)
+            -newBlock = 'form'
+            div(class=`${bemBlock}` + newBlock)
+              -newBlock = 'input'
+              div(class=`${bemBlock}` + newBlock)
+                +img(`${bemBlock}` + 'email-img','subscribe/message','svg',' ',' ','l')
+                input(name="text" placeholder="Your Email" id="email")
+              button(class=`${bemBlock}` + 'button' +' primary-button' onclick="sendData()") Subscribe
+            -newBlock = 'decor'
+            +img(`${bemBlock}` + newBlock + ` ${newBlock}`,`${sectionName}/decor`,'svg',' ',' ','l')
+      -sectionNumber++
+      -sectionName= 'footer'
+      -bemBlock = `${sectionName}__`
+      footer.footer
+        -newBlock = 'container'
+        div(class=`${bemBlock}` + newBlock + ` ${newBlock}`)
+          -newBlock = 'footer-column'
+          div(class=`${bemBlock}` + newBlock)
+            -newBlock = 'logo'
+            a(class=`${bemBlock}` + newBlock + ` ${newBlock}` href='#')
+              +img(`${bemBlock}` + newBlock + '-img','common/logo','svg','logo',' ','l')
+              div(class=`${bemBlock}` + newBlock + '-txt' + ' logo-txt') Travlog
+            div(class=`${bemBlock}` + 'txt')= articleText[0]
+            -newBlock = 'social'
+            div(class=`${bemBlock}` + newBlock + ` ${newBlock}`)
+              each img in ['facebook','tweeter','instagram']
+                +img(`${newBlock}` + '__item',`socials/${img}`,'svg',`${img}`,img,'l')
+          -var col1= [['Company', 'About', 'Career', 'Mobile'], ['Contact', 'Why Travlog?', 'Partner with us', 'FAQ’s', 'Blog'], ['Meet Us', '+00 92 1234 56789', 'info@travlog.com', '205. R Street, New York BD23200'] ];
+          -var articleTitle= ['Our top value categories for you','Explore top explore','We helping you find your dream location','We offer best services','Trust our clients','Prepare yourself & let’s explore the beauty of the world']
+            each index in col1
+              -newBlock = 'footer-column'
+              ul(class=`${bemBlock}` + newBlock)
+                -i = 0
+                each idx in index
+                  li(class=`${bemBlock}` + 'item')
+                    if i !== 0
+                      a(class=`${bemBlock}` + 'link' href='#')=idx
+                    else
+                      div(class=`${bemBlock}` + 'title' href='#')=idx
+                    -i++
+  script(src='assets/js/script.js')
